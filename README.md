@@ -7,7 +7,7 @@ Change hex color values in `config/sway/color_schemes/` and keep the same values
 
 ## Install (Debian).
 
-**Host** (laptop):
+[Host]:
 
 ```bash
 git clone https://github.com/backdoorsecurity/Swaytastic.git
@@ -15,7 +15,7 @@ cd Swaytastic/host
 ./install.sh
 ```
 
-**Guest** (VM):
+[Guest vm]:
 
 ```bash
 git clone https://github.com/backdoorsecurity/Swaytastic.git
