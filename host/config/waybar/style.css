@@ -19,7 +19,7 @@ window#waybar {
 }
 
 #workspaces button {
-    background: #111111;
+    background: #090909;
     color: #de1062;
     border: 1px solid #99e01c;
     border-radius: 0;
@@ -29,7 +29,7 @@ window#waybar {
 
 #workspaces button.focused,
 #workspaces button.active {
-    background: #000000;
+    background: #090909;
     color: #99e01c;
     border-color: #99e01c;
 }
@@ -59,6 +59,6 @@ window#waybar {
 }
 
 #clock {
-    color: #970b1c;
+    color: #99e01c;
     padding: 0 12px;
 }

@@ -1,7 +1,4 @@
 if [ "$(tty)" = "/dev/tty1" ]; then
-	set -a
-	# shellcheck disable=SC1091
-	. "$HOME/.config/sway/env"
-	set +a
+export QT_QPA_PLATFORMTHEME=qt6ct
 	exec sway
 fi

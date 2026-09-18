@@ -1,4 +1,0 @@
-#!/bin/sh
-#. "$HOME/.config/sway/env"
-#set +a
-exec brave-origin-nightly --qt-version=6 "$@"

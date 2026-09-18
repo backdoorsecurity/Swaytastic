@@ -99,7 +99,6 @@ sudo cp -a $SRC/local/themes/Swaytastic /usr/share/themes/
 sudo cp -a $SRC/local/icons/Swaytastic /usr/share/icons/
 sudo cp -a $SRC/local/qss/Swaytastic.qss /usr/share/qt6ct/qss/
 sudo cp -a $SRC/local/colors/Swaytastic.conf /usr/share/qt6ct/colors/
-ln -sfn $HOME/.config/sway/color_schemes/waybar.css $HOME/.config/waybar/style.css
 
 sudo gtk-update-icon-cache -f /usr/share/icons/Swaytastic
 xdg-mime default thunar.desktop inode/directory

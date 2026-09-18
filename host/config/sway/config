@@ -3,7 +3,6 @@
 ############################################# [VARIABLES] ##########################################
 
 include $HOME/.config/sway/variables
-include $HOME/.config/sway/color_schemes/sway.conf
 
 ###############################################################################################
 
@@ -24,14 +23,14 @@ include $HOME/.config/sway/color_schemes/sway.conf
 	bindsym $mod+Shift+r reload
 	
 	bindsym $mod+x kill
-        bindsym $mod+q workspace $ws_brave, exec --no-startup-id $HOME/.config/sway/scripts/brave
-        bindsym $mod+w exec --no-startup-id $envexec foot
-        bindsym $mod+e exec --no-startup-id $envexec foot
-        bindsym $mod+r exec --no-startup-id $envexec foot
-        bindsym $mod+t workspace $ws_virt, exec --no-startup-id $envexec virt-manager
+        bindsym $mod+q workspace $ws_brave, exec --no-startup-id brave-origin-nightly
+        bindsym $mod+w exec --no-startup-id foot
+        bindsym $mod+e exec --no-startup-id foot
+        bindsym $mod+r exec --no-startup-id foot
+        bindsym $mod+t workspace $ws_virt, exec --no-startup-id virt-manager
 	bindsym $mod+i fullscreen
 	bindsym $mod+Escape exec --no-startup-id poweroff
-	bindsym $mod+Shift+d exec $envexec pcmanfm-qt --desktop-pref --profile=sway
+	bindsym $mod+Shift+d exec pcmanfm-qt --desktop-pref --profile=sway
 
 #	bindsym $mod+0 layout stacking
 #	bindsym $mod+9 layout tabbed
@@ -95,14 +94,6 @@ assign [app_id="org.virt-manager.virt-manager"] $ws_virt
 assign [class="Virt-manager"] $ws_virt
 assign [class="virt-manager"] $ws_virt
 
-# [WINDOW MANAGEMENT]
-#                       border| background|text|   indicator|child_border
-client.focused          $accent $bg_window $fg $indicator $child_border
-client.focused_inactive $accent $bg_window $fg $indicator $child_border
-client.unfocused        $accent $bg_window $fg $indicator $child_border
-client.urgent           $accent $bg_window $fg $indicator $child_border
-client.placeholder      $accent $bg_window $fg $indicator $child_border
-
 # [WINDOW SIZING]
 #
 titlebar_border_thickness 0
@@ -112,7 +103,7 @@ gaps left 0
 gaps right 0
 gaps bottom 0
 gaps top 0
-for_window [app_id="foot"] border pixel 0
+#for_window [app_id="foot"] border pixel 0
 # Qt 6.8 on sway 1.10 often maps QMenus as xdg_toplevel, not xdg_popup.
 # Tiling those windows makes right-click look like a no-op. Layer-shell desktop is not a managed window.
 for_window [app_id="pcmanfm-qt"] floating enable
@@ -124,10 +115,7 @@ for_window [app_id="pcmanfm-qt"] floating enable
 exec_always brightnessctl set 70%
 exec_always pgrep -x wlsunset || wlsunset -t 3200
 # desktop icons (layer-shell). exec, not exec_always, so reload does not duplicate.
-exec $envexec pcmanfm-qt --desktop --profile=sway
-exec_always $HOME/.config/sway/scripts/apply-gtk-interface.sh
-# push toolkit env to dbus/portals (Brave/GTK). values come from $HOME/.config/sway/env
-exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE QT_QPA_PLATFORMTHEME QT_QPA_PLATFORM QT_STYLE_OVERRIDE GDK_BACKEND GTK_THEME XCURSOR_THEME XCURSOR_SIZE 2>/dev/null || true
+exec pcmanfm-qt --desktop --profile=sway
 font monospace 16
 include /etc/sway/config-vars.d/*
 include /etc/sway/config.d/*
