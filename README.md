@@ -2,11 +2,11 @@
 
 High-contrast Sway theme kit for those with light-sensitive eyes.
 Currently supports debian. will be adding support for more distros soon.
-
+  
 Change hex color values in `config/sway/color_schemes/` and keep the same values in `local/share/themes/Swaytastic`, `config/qt6ct/` (`colors/Swaytastic.conf`, `qss/Swaytastic.qss`), and the icon SVGs. Re-run `install.sh` to push those files into `/usr/share`.
-
+  
 ## Install (Debian).
-
+  
 [Host]:
 
 ```bash
@@ -14,7 +14,7 @@ git clone https://github.com/backdoorsecurity/Swaytastic.git
 cd Swaytastic/host
 ./install.sh
 ```
-
+  
 [Guest vm]:
 
 ```bash
