@@ -1,0 +1,18 @@
+# Sourced before Sway starts, and by env-exec for bindsym launches.
+# Sway does not read $HOME/.bashrc; bindsym children inherit Sway, not the shell.
+# GTK_THEME=Swaytastic beats gsettings HighContrastInverse (Debian default here).
+# Qt6 (pcmanfm-qt, qt6ct, Brave Appearance → QT) uses qt6ct + Fusion +
+# colors/Swaytastic.conf. Host does not ship Qt5. sway/scripts/brave passes
+# --qt-version=6 so Chromium does not load Qt5 and abort() on wayland.
+GTK_THEME=Swaytastic
+GTK_APPLICATION_PREFER_DARK_THEME=1
+QT_QPA_PLATFORMTHEME=qt6ct
+QT_QPA_PLATFORM=wayland
+QT_STYLE_OVERRIDE=Fusion
+GDK_BACKEND=wayland
+XDG_CURRENT_DESKTOP=sway
+XDG_SESSION_TYPE=wayland
+XCURSOR_THEME=oxy-red-argentina
+XCURSOR_SIZE=50
+WLR_NO_HARDWARE_CURSORS=1
+ADW_DISABLE_PORTAL=1

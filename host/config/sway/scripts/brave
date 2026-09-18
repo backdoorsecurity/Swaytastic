@@ -1,0 +1,9 @@
+#!/bin/sh
+# GTK+ uses GTK_THEME=Swaytastic. Appearance → QT uses the session qt6ct pack.
+# Chromium on Sway prefers Qt5; that abort()s under QT_QPA_PLATFORM=wayland
+# unless qtwayland5 is installed. Host does not ship Qt5, so force Qt6.
+set -a
+# shellcheck disable=SC1091
+. "$HOME/.config/sway/env"
+set +a
+exec brave-origin-nightly --qt-version=6 "$@"

@@ -1,0 +1,7 @@
+#!/bin/sh
+# Load Sway session env, then exec. Used by bindsym so apps match a login shell.
+set -a
+# shellcheck disable=SC1091
+. "$HOME/.config/sway/env"
+set +a
+exec "$@"
