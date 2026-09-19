@@ -45,7 +45,12 @@ HEX_KEYS = (
     "folder_fill",
     "folder_stroke",
     "waybar_border",
+    "waybar_urgent_bg",
     "clock",
+    "battery",
+    "battery_charging",
+    "battery_warning",
+    "battery_critical",
     "workspace_active_fg",
     "workspace_active_border",
     "workspace_inactive_fg",
@@ -140,7 +145,12 @@ def load_pack(name: str) -> dict[str, str]:
         "folder_fill": hx("folder_fill", accent),
         "folder_stroke": hx("folder_stroke", fg),
         "waybar_border": hx("waybar_border", accent),
+        "waybar_urgent_bg": hx("waybar_urgent_bg", bg),
         "clock": hx("clock", fg),
+        "battery": hx("battery", fg),
+        "battery_charging": hx("battery_charging", hx("battery", fg)),
+        "battery_warning": hx("battery_warning", hx("warning", accent)),
+        "battery_critical": hx("battery_critical", hx("error", accent)),
         "workspace_active_fg": hx("workspace_active_fg", fg),
         "workspace_active_border": hx("workspace_active_border", fg),
         "workspace_inactive_fg": hx("workspace_inactive_fg", accent),
@@ -316,11 +326,6 @@ inactiveFrame={pack['unfocused_rgb']}
 
 
 def waybar_css(pack: dict[str, str]) -> str:
-    dirty_crayon = pack["icon_mode"].lower() == "dirty_crayon"
-    bat = pack["green"] if dirty_crayon else pack["fg"]
-    bat_warn = pack["yellow"] if dirty_crayon else pack["accent"]
-    bat_crit = pack["red"] if dirty_crayon else pack["accent"]
-    urgent = pack["error"] if dirty_crayon else pack["accent"]
     return f"""/* Generated from pack {pack['name']} */
 
 * {{
@@ -358,27 +363,27 @@ window#waybar {{
 }}
 
 #workspaces button.urgent {{
-    background: {pack['bg']};
-    color: {urgent};
-    border-color: {urgent};
+    background: {pack['waybar_urgent_bg']};
+    color: {pack['error']};
+    border-color: {pack['error']};
 }}
 
 #battery {{
-    color: {bat};
+    color: {pack['battery']};
     padding: 0 12px;
 }}
 
 #battery.charging,
 #battery.plugged {{
-    color: {bat};
+    color: {pack['battery_charging']};
 }}
 
 #battery.warning {{
-    color: {bat_warn};
+    color: {pack['battery_warning']};
 }}
 
 #battery.critical {{
-    color: {bat_crit};
+    color: {pack['battery_critical']};
 }}
 
 #clock {{
