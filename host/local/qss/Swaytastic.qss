@@ -55,7 +55,8 @@ QLineEdit, QTextEdit, QPlainTextEdit, QSpinBox, QComboBox, QAbstractSpinBox {
 
 QComboBox::drop-down {
     border-left: 2px solid #de1062;
-    width: 18px;
+    width: 22px;
+    background: #de1062;
 }
 
 /* Desktop is a fullscreen layer-shell surface (exclusive zone -1), so a
@@ -165,4 +166,69 @@ QToolTip {
 
 QStatusBar {
     border-top: 2px solid #de1062;
+}
+
+/* Fusion derives checkbox/radio outlines from Window.darker(). Window is
+   #000000, so the indicators are black-on-black. Draw them explicitly. */
+QCheckBox, QRadioButton {
+    color: #99e01c;
+    spacing: 8px;
+}
+
+QCheckBox::indicator, QGroupBox::indicator {
+    width: 14px;
+    height: 14px;
+    border: 2px solid #de1062;
+    background: #000000;
+}
+
+QCheckBox::indicator:checked, QGroupBox::indicator:checked {
+    background: #99e01c;
+}
+
+QCheckBox::indicator:disabled, QGroupBox::indicator:disabled {
+    border-color: #6f0831;
+    background: #100909;
+}
+
+QCheckBox::indicator:checked:disabled, QGroupBox::indicator:checked:disabled {
+    background: #4a7a0e;
+}
+
+QRadioButton::indicator {
+    width: 14px;
+    height: 14px;
+    border: 2px solid #de1062;
+    border-radius: 8px;
+    background: #000000;
+}
+
+QRadioButton::indicator:checked {
+    background: #99e01c;
+}
+
+QRadioButton::indicator:disabled {
+    border-color: #6f0831;
+    background: #100909;
+}
+
+QRadioButton::indicator:checked:disabled {
+    background: #4a7a0e;
+}
+
+QMenu::indicator {
+    width: 12px;
+    height: 12px;
+    border: 2px solid #de1062;
+    background: #000000;
+}
+
+QMenu::indicator:checked {
+    background: #99e01c;
+}
+
+QAbstractSpinBox::up-button, QAbstractSpinBox::down-button {
+    width: 16px;
+    background: #de1062;
+    border: none;
 }
