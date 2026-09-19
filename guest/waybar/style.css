@@ -1,4 +1,4 @@
-/* Keep hex in sync with color_schemes/sway.conf */
+/* Generated from pack Dirty_Crayon */
 
 * {
     font-family: monospace;
@@ -8,8 +8,8 @@
 
 window#waybar {
     background: #100909;
-    color: #99e01c;
-    border: 2px solid #de1062;
+    color: #bbab0c;
+    border: 2px solid #ac0c1c;
     min-height: 40px;
 }
 
@@ -20,8 +20,8 @@ window#waybar {
 
 #workspaces button {
     background: #090909;
-    color: #de1062;
-    border: 1px solid #99e01c;
+    color: #148acc;
+    border: 1px solid #de2a6a;
     border-radius: 0;
     padding: 2px 4px;
     margin: 4px 2px;
@@ -30,17 +30,35 @@ window#waybar {
 #workspaces button.focused,
 #workspaces button.active {
     background: #090909;
-    color: #99e01c;
-    border-color: #99e01c;
+    color: #ac0c1c;
+    border-color: #5c0b70;
 }
 
 #workspaces button.urgent {
-    background: #000000;
-    color: #de1062;
-    border-color: #de1062;
+    background: #090909;
+    color: #ac0c1c;
+    border-color: #ac0c1c;
+}
+
+#battery {
+    color: #489419;
+    padding: 0 12px;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: #489419;
+}
+
+#battery.warning {
+    color: #bbab0c;
+}
+
+#battery.critical {
+    color: #ac0c1c;
 }
 
 #clock {
-    color: #99e01c;
+    color: #489419;
     padding: 0 12px;
 }

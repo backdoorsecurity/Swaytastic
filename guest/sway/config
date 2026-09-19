@@ -60,7 +60,7 @@ include $HOME/.config/sway/variables
 
 #	[DISPLAY]
 
-	output * resolution 1280x800 scale 1
+	output * resolution 1360x768 scale 1
 
 #	[TOUCHPAD]
 	input * { 

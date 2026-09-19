@@ -60,7 +60,7 @@ include $HOME/.config/sway/variables
 
 #	[DISPLAY]
 
-	output * scale 1.5
+	output * scale 2
 
 #	[TOUCHPAD]
 	input * { 

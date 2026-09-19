@@ -1,42 +1,42 @@
 /* Swaytastic GTK4. Same palette as gtk-3.0. */
 @import url("resource:///org/gtk/libgtk/theme/Adwaita/gtk-contained-dark.css");
 
-@define-color theme_bg_color #100909;
-@define-color theme_fg_color #99e01c;
-@define-color theme_base_color #000000;
-@define-color theme_text_color #99e01c;
-@define-color theme_selected_bg_color #de1062;
-@define-color theme_selected_fg_color #99e01c;
-@define-color insensitive_bg_color #100909;
-@define-color insensitive_fg_color #4a7a0e;
-@define-color insensitive_base_color #100909;
-@define-color theme_unfocused_bg_color #100909;
-@define-color theme_unfocused_fg_color #99e01c;
-@define-color theme_unfocused_base_color #000000;
-@define-color theme_unfocused_text_color #99e01c;
-@define-color theme_unfocused_selected_bg_color #6f0831;
-@define-color theme_unfocused_selected_fg_color #99e01c;
-@define-color borders #de1062;
-@define-color unfocused_borders #6f0831;
-@define-color warning_color #ff1e96;
-@define-color error_color #ff1e96;
-@define-color success_color #99e01c;
-@define-color accent_color #de1062;
-@define-color accent_bg_color #de1062;
-@define-color accent_fg_color #99e01c;
-@define-color window_bg_color #100909;
-@define-color window_fg_color #99e01c;
-@define-color view_bg_color #000000;
-@define-color view_fg_color #99e01c;
-@define-color headerbar_bg_color #100909;
-@define-color headerbar_fg_color #99e01c;
-@define-color headerbar_border_color #de1062;
-@define-color sidebar_bg_color #100909;
-@define-color sidebar_fg_color #99e01c;
-@define-color card_bg_color #100909;
-@define-color card_fg_color #99e01c;
-@define-color popover_bg_color #000000;
-@define-color popover_fg_color #99e01c;
+@define-color theme_bg_color #100909; /* default widget background */
+@define-color theme_fg_color #bbab0c; /* default widget foreground */
+@define-color theme_base_color #090909; /* text view / list background */
+@define-color theme_text_color #bbab0c; /* text in views */
+@define-color theme_selected_bg_color #163ca3; /* selected item background */
+@define-color theme_selected_fg_color #bbab0c; /* selected item foreground */
+@define-color insensitive_bg_color #100909; /* disabled widget background */
+@define-color insensitive_fg_color #489419; /* disabled widget foreground */
+@define-color insensitive_base_color #100909; /* disabled view background */
+@define-color theme_unfocused_bg_color #100909; /* unfocused window widget background */
+@define-color theme_unfocused_fg_color #bbab0c; /* unfocused window widget foreground */
+@define-color theme_unfocused_base_color #090909; /* unfocused window view background */
+@define-color theme_unfocused_text_color #bbab0c; /* unfocused window view text */
+@define-color theme_unfocused_selected_bg_color #242770; /* selection in an unfocused window */
+@define-color theme_unfocused_selected_fg_color #bbab0c; /* selected text in an unfocused window */
+@define-color borders #de2a6a; /* widget borders */
+@define-color unfocused_borders #242770; /* borders in an unfocused window */
+@define-color warning_color #bbab0c;
+@define-color error_color #ac0c1c;
+@define-color success_color #489419;
+@define-color accent_color #de2a6a; /* libadwaita accent */
+@define-color accent_bg_color #de2a6a; /* accent-filled controls */
+@define-color accent_fg_color #bbab0c; /* foreground on accent fills */
+@define-color window_bg_color #100909; /* window background */
+@define-color window_fg_color #bbab0c; /* window foreground */
+@define-color view_bg_color #090909; /* content view background */
+@define-color view_fg_color #bbab0c; /* content view foreground */
+@define-color headerbar_bg_color #100909; /* titlebar / header bar background */
+@define-color headerbar_fg_color #bbab0c; /* titlebar / header bar foreground */
+@define-color headerbar_border_color #de2a6a; /* titlebar / header bar border */
+@define-color sidebar_bg_color #100909; /* sidebar background */
+@define-color sidebar_fg_color #bbab0c; /* sidebar foreground */
+@define-color card_bg_color #100909; /* card background */
+@define-color card_fg_color #bbab0c; /* card foreground */
+@define-color popover_bg_color #090909; /* menu / popover background */
+@define-color popover_fg_color #bbab0c; /* menu / popover foreground */
 
 window {
     background-color: @window_bg_color;
