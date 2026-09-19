@@ -2,8 +2,8 @@
 
 High-contrast Sway theme kit for those with light-sensitive eyes.
 Currently supports debian. will be adding support for more distros soon.
-  
-Change hex color values in `config/sway/color_schemes/` and keep the same values in `local/share/themes/Swaytastic`, `config/qt6ct/` (`colors/Swaytastic.conf`, `qss/Swaytastic.qss`), and the icon SVGs. Re-run `install.sh` to push those files into `/usr/share`.
+
+Color looks live in `local/packs/` (`green_on_pink`, `rainbow`). `install.sh` prompts which pack to apply. The installed GTK/icon/qt name stays `Swaytastic`. Switch later with `local/switch-theme.sh <pack>` (also copied to `~/.config/sway/scripts/switch-theme.sh`). To add a look, copy a pack conf and re-run the switcher.
   
 ## Install (Debian).
   
@@ -23,7 +23,7 @@ cd Swaytastic/guest
 ./install.sh
 ```
 
-Then log in on tty1 (or `set -a; . $HOME/.config/sway/env; set +a; exec sway`).  
+Then log in on tty1.  
   
 Session env sets `GTK_THEME=Swaytastic` and `QT_QPA_PLATFORMTHEME=qt6ct` (Fusion + `/usr/share/qt6ct/colors/Swaytastic.conf`). Debian’s default gsettings theme is often HighContrastInverse; `install.sh` and sway startup run `apply-gtk-interface.sh` so menus follow Swaytastic.  
   

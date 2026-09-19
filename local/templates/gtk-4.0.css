@@ -1,0 +1,59 @@
+/* Swaytastic GTK4. Same palette as gtk-3.0. */
+@import url("resource:///org/gtk/libgtk/theme/Adwaita/gtk-contained-dark.css");
+
+@define-color theme_bg_color $bg_alt;
+@define-color theme_fg_color $fg;
+@define-color theme_base_color $bg;
+@define-color theme_text_color $fg;
+@define-color theme_selected_bg_color $selection;
+@define-color theme_selected_fg_color $selection_fg;
+@define-color insensitive_bg_color $bg_alt;
+@define-color insensitive_fg_color $fg_dim;
+@define-color insensitive_base_color $bg_alt;
+@define-color theme_unfocused_bg_color $bg_alt;
+@define-color theme_unfocused_fg_color $fg;
+@define-color theme_unfocused_base_color $bg;
+@define-color theme_unfocused_text_color $fg;
+@define-color theme_unfocused_selected_bg_color $unfocused;
+@define-color theme_unfocused_selected_fg_color $selection_fg;
+@define-color borders $accent;
+@define-color unfocused_borders $unfocused;
+@define-color warning_color $warning;
+@define-color error_color $error;
+@define-color success_color $success;
+@define-color accent_color $accent;
+@define-color accent_bg_color $accent;
+@define-color accent_fg_color $fg;
+@define-color window_bg_color $bg_alt;
+@define-color window_fg_color $fg;
+@define-color view_bg_color $bg;
+@define-color view_fg_color $fg;
+@define-color headerbar_bg_color $bg_alt;
+@define-color headerbar_fg_color $fg;
+@define-color headerbar_border_color $accent;
+@define-color sidebar_bg_color $bg_alt;
+@define-color sidebar_fg_color $fg;
+@define-color card_bg_color $bg_alt;
+@define-color card_fg_color $fg;
+@define-color popover_bg_color $bg;
+@define-color popover_fg_color $fg;
+
+window {
+    background-color: @window_bg_color;
+    color: @window_fg_color;
+}
+
+popover, menu, .csd.popup {
+    background-color: @popover_bg_color;
+    color: @popover_fg_color;
+    border: 2px solid @borders;
+}
+
+menuitem, modelbutton {
+    color: @popover_fg_color;
+}
+
+menuitem:hover, menuitem:selected, modelbutton:hover {
+    background-color: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
+}

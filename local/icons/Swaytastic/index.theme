@@ -1,8 +1,8 @@
 [Icon Theme]
 Name=Swaytastic
-Comment=Swaytastic folders and Adwaita shapes in green/pink
-Inherits=hicolor
-Directories=scalable/places,scalable/mimetypes,scalable/devices,scalable/status,symbolic/actions,symbolic/apps,symbolic/categories,symbolic/devices,symbolic/emblems,symbolic/emotes,symbolic/mimetypes,symbolic/places,symbolic/status,symbolic/legacy,symbolic/ui
+Comment=Yellow text, rainbow chrome
+Inherits=Adwaita,hicolor
+Directories=scalable/places,scalable/mimetypes,scalable/devices,scalable/status,symbolic/actions,symbolic/apps,symbolic/categories,symbolic/devices,symbolic/emotes,symbolic/mimetypes,symbolic/places,symbolic/status,symbolic/legacy,symbolic/ui
 
 [scalable/places]
 Size=48
@@ -58,13 +58,6 @@ Size=16
 MinSize=1
 MaxSize=512
 Context=Devices
-Type=Scalable
-
-[symbolic/emblems]
-Size=16
-MinSize=1
-MaxSize=512
-Context=Emblems
 Type=Scalable
 
 [symbolic/emotes]

@@ -19,6 +19,8 @@ PACKAGES=(
   pulseaudio-utils
   oxygencursors
   libqt6svg6
+  qt6-svg-plugins
+  librsvg2-common
   qt6-wayland
   qt6-qpa-plugins
   qt6-gtk-platformtheme
@@ -46,6 +48,7 @@ PACKAGES=(
   pciutils
   usbutils
   locate
+  python3
   build-essential
   meson
   ninja-build
@@ -71,20 +74,45 @@ else
   curl -fsS https://dl.brave.com/install.sh | FLAVOR=origin CHANNEL=nightly sh
 fi
 
+bash "$SRC/local/install-meslo.sh"
+
 cp $SRC/zshrc $HOME/.zshrc
+cp $SRC/p10k.zsh $HOME/.p10k.zsh
 cp $SRC/zprofile $HOME/.zprofile
 
 cp -a $SRC/config/* $HOME/.config/
 cp -a $SRC/host/sway $HOME/.config/
 cp -a $SRC/host/waybar $HOME/.config/
+install -m 755 $SRC/local/switch-theme.sh $HOME/.config/sway/scripts/switch-theme.sh
 
-sudo cp -a $SRC/local/themes/Swaytastic /usr/share/themes/
-sudo cp -a $SRC/local/icons/Swaytastic /usr/share/icons/
-sudo cp -a $SRC/local/qss/Swaytastic.qss /usr/share/qt6ct/qss/
-sudo cp -a $SRC/local/colors/Swaytastic.conf /usr/share/qt6ct/colors/
+PACKS=("$SRC"/local/packs/*.conf)
+DEFAULT_PACK=green_on_pink
+if [[ -f $SRC/local/active-pack ]]; then
+  DEFAULT_PACK=$(tr -d '[:space:]' < "$SRC/local/active-pack")
+fi
+PACK="$DEFAULT_PACK"
+if [[ -t 0 ]]; then
+  echo "Theme packs:"
+  i=1
+  DEFAULT_I=1
+  for p in "${PACKS[@]}"; do
+    n=$(basename "$p" .conf)
+    echo "  $i) $n"
+    if [[ $n == "$DEFAULT_PACK" ]]; then
+      DEFAULT_I=$i
+    fi
+    i=$((i + 1))
+  done
+  read -r -p "Select pack [$DEFAULT_I=$DEFAULT_PACK]: " choice
+  choice=${choice:-$DEFAULT_I}
+  PACK=$(basename "${PACKS[choice-1]}" .conf)
+fi
+echo "applying pack $PACK"
+python3 "$SRC/local/apply-pack.py" "$PACK" --live --repo --root "$SRC"
 
-sudo gtk-update-icon-cache -f /usr/share/icons/Swaytastic
 xdg-mime default thunar.desktop inode/directory
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zshrc
 
 echo
 echo 'done. log back in on tty1'
