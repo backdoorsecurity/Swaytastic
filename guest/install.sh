@@ -1,5 +1,5 @@
 #!/bin/bash
-SRC="$HOME/Swaytastic/guest"
+SRC="$HOME/Swaytastic"
 
 PACKAGES=(
   sway
@@ -82,7 +82,7 @@ PACKAGES=(
 
 echo "installing packages"
 sudo apt update
-sudo apt install -y --no-install-recommends "$PACKAGES"
+sudo apt install -y --no-install-recommends "${PACKAGES[@]}"
 
 echo "Install Brave Origin Nightly"
 if command -v brave-origin-nightly >/dev/null 2>&1; then
@@ -95,6 +95,9 @@ cp $SRC/zshrc $HOME/.zshrc
 cp $SRC/zprofile $HOME/.zprofile
 
 cp -a $SRC/config/* $HOME/.config/
+cp -a $SRC/guest/sway $HOME/.config/
+cp -a $SRC/guest/waybar $HOME/.config/
+
 sudo cp -a $SRC/local/themes/Swaytastic /usr/share/themes/
 sudo cp -a $SRC/local/icons/Swaytastic /usr/share/icons/
 sudo cp -a $SRC/local/qss/Swaytastic.qss /usr/share/qt6ct/qss/
@@ -104,4 +107,4 @@ sudo gtk-update-icon-cache -f /usr/share/icons/Swaytastic
 xdg-mime default thunar.desktop inode/directory
 
 echo
-echo 'done. log in on tty1 (or: set -a; . $HOME/.config/sway/env; set +a; exec sway)'
+echo 'done. log back in on tty1'
